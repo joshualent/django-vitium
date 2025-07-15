@@ -1,0 +1,17 @@
+[project]
+name = "django-vite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "django-vite",
+]
+
+[tool.uv.sources]
+django-vite = { workspace = true }
