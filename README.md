@@ -1,8 +1,8 @@
-# django-vimuim
+# django-vituim
 
 A Django template for starting a new Django project using Vite (using django-vite package). This project is inspired by [lithium](https://github.com/wsvincent/lithium) by wsvincent and other django templates.
 
-This is my personal template and is not meant to be "lean" or "interchangable," it just includes the many useful third-party packages that make it into most of my Django projects.
+This is my personal template and is not meant to be "lean" or "interchangable." It includes useful third-party packages I consistently use in my Django projects.
 
 ## Future
 
