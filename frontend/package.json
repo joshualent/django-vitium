@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "dev:django": "vite --host 0.0.0.0",
+    "dev:django": "vite --host localhost --strictPort --port 5173",
     "build:django": "vite build && echo 'Assets built successfully for Django!'"
   },
   "devDependencies": {

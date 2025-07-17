@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import fullReload from "vite-plugin-full-reload";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -65,6 +66,8 @@ export default defineConfig({
 
     // Enable hot module replacement
     hmr: {
+      protocol: "ws",
+      host: "localhost",
       port: 5174,
     },
 
@@ -94,20 +97,13 @@ export default defineConfig({
   // Configure plugins
   plugins: [
     // Add the full reload plugin for template changes
-    {
-      name: "full-reload",
-      handleHotUpdate({ file, server }) {
-        if (
-          file.includes("../backend/") &&
-          (file.endsWith(".py") || file.endsWith(".html"))
-        ) {
-          server.ws.send({
-            type: "full-reload",
-          });
-          return [];
-        }
-      },
-    },
+    fullReload(
+      ["../backend/templates/**/.html", "../backend/**/templates/**/*.html"],
+      {
+        delay: 200,
+        always: true,
+      }
+    ),
   ],
 
   // Optimize dependencies
